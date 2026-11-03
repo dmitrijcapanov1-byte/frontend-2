@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Моя студия — Дизайн и разработка</title>
+  
+  <!-- Подключение шрифтов Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Unbounded:wght@500;700&display=swap" rel="stylesheet">
+  
+  <!-- Подключение стилей -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Шапка сайта -->
+  <header class="header container">
+    <div class="logo">СДВИГ<span class="accent">●</span></div>
+    
+    <nav class="nav">
+      <a href="#">Проекты</a>
+      <a href="#">Подход</a>
+      <a href="#">Студия</a>
+      <a href="#">Журнал</a>
+    </nav>
+    
+    <a href="#" class="btn">Обсудим проект ↗</a>
+  </header>
+
+  <main>
+    <!-- Главный экран (Hero) -->
+    <section class="hero container">
+      <div class="hero-content">
+        <p class="subtitle">Независимая дизайн-студия</p>
+        <h1 class="hero-title">
+          Сдвигаем привычное.<br>
+          Создаём <span class="text-muted">новое.</span>
+        </h1>
+        <p class="hero-desc">Стратегия, айдентика и цифровой опыт. Помогаем смелым компаниям обрести свой голос — и быть услышанными.</p>
+        
+        <div class="hero-actions">
+          <a href="#projects" class="btn btn-primary">Смотреть проекты ↗</a>
+          <span class="hero-note">На основе случайных значений</span>
+        </div>
+      </div>
+      
+      <div class="hero-image">
+        <!-- Главное изображение (абстракция) -->
+        <img src="https://images.unsplash.com/photo-1518005020951-eccb494ad742?q=80&w=800&auto=format&fit=crop" alt="Абстрактная архитектура">
+      </div>
+    </section>
+
+    <!-- Секция с проектами -->
+    <section id="projects" class="projects container">
+      <div class="section-header">
+        <h2 class="section-title">Не просто красиво.<br>Точно по смыслу.</h2>
+        <span class="project-count">2015 — 2026 / 10 проектов</span>
+      </div>
+      
+      <!-- Сетка карточек проектов -->
+      <div class="grid-3">
+        
+        <!-- Карточка 1 -->
+        <article class="project-card">
+          <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=600&auto=format&fit=crop" alt="Здание (Основа)">
+          <div class="card-info">
+            <h3>ОСНОВА</h3>
+            <p>Строительство · Айдентика · Сайт</p>
+          </div>
+        </article>
+        
+        <!-- Карточка 2 -->
+        <article class="project-card">
+          <img src="https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?q=80&w=600&auto=format&fit=crop" alt="Интерьер (Тихо)">
+          <div class="card-info">
+            <h3>ТИХО</h3>
+            <p>Промышленность · Упаковка</p>
+          </div>
+        </article>
+
+        <!-- Карточка 3 -->
+        <article class="project-card">
+          <img src="https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?q=80&w=600&auto=format&fit=crop" alt="3D Абстракция (Атлас)">
+          <div class="card-info">
+            <h3>АТЛАС</h3>
+            <p>UX/UI · Цифровой продукт</p>
+          </div>
+        </article>
+
+      </div>
+    </section>
+  </main>
+
+  <!-- Подвал сайта -->
+  <footer class="footer container">
+    <div class="footer-top">
+      <h2 class="footer-title">Всё начинается с<br>разговора.</h2>
+      <a href="#" class="btn-circle accent">↗</a>
+    </div>
+    
+    <div class="footer-bottom">
+      <div class="logo">СДВИГ<span class="accent">●</span></div>
+      <p>© 2015—2026. Независимая дизайн-студия.</p>
+    </div>
+  </footer>
+
+</body>
+</html>
