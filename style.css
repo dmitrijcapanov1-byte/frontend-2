@@ -1,49 +1,77 @@
+/* =========================================
+   1. ПЕРЕМЕННЫЕ И БАЗОВЫЕ НАСТРОЙКИ
+   ========================================= */
 :root {
   --bg: #161618;
   --text: #EDEDED;
   --text-muted: #8A8A93;
   --accent: #FF5C35;
   --border: #2A2A2D;
+  
   --font-main: 'Inter', sans-serif;
-  --font-display: 'Unbounded', sans-serif;
+  --font-display: 'Unbounded', sans-serif; 
+
   --space-sm: 1rem;
   --space-md: 2rem;
   --space-lg: 8rem;
 }
 
 * { box-sizing: border-box; margin: 0; padding: 0; }
-body { background-color: var(--bg); color: var(--text); font-family: var(--font-main); line-height: 1.5; -webkit-font-smoothing: antialiased; }
+html { scroll-behavior: smooth; }
+
+body {
+  background-color: var(--bg);
+  color: var(--text);
+  font-family: var(--font-main);
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
 .container { max-width: 1360px; margin: 0 auto; padding: 0 4vw; }
 a { text-decoration: none; color: inherit; }
 img { max-width: 100%; display: block; object-fit: cover; }
+
 .accent { color: var(--accent); }
 .text-muted { color: var(--text-muted); }
 
-h1, h2, h3 { font-family: var(--font-display); font-weight: 500; line-height: 1.1; letter-spacing: -0.02em; }
-.hero-title { font-size: clamp(3rem, 6vw, 5.5rem); margin-bottom: var(--space-md); }
-.section-title { font-size: clamp(2rem, 4vw, 3.5rem); }
+h1, h2, h3, h4 { font-family: var(--font-display); font-weight: 500; line-height: 1.1; letter-spacing: -0.02em; }
 
+/* =========================================
+   2. КНОПКИ
+   ========================================= */
 .btn { display: inline-flex; align-items: center; padding: 0.75rem 1.5rem; border: 1px solid var(--border); border-radius: 50px; font-size: 0.875rem; transition: all 0.3s ease; }
 .btn:hover { border-color: var(--text); }
 .btn-primary { background: var(--text); color: var(--bg); border: none; }
 .btn-primary:hover { background: var(--accent); color: #fff; }
 .btn-circle { display: grid; place-items: center; width: 80px; height: 80px; border-radius: 50%; background: var(--text); color: var(--bg); font-size: 1.5rem; transition: transform 0.3s ease; }
 .btn-circle:hover { transform: scale(1.1) rotate(45deg); }
+.center-btn { display: flex; justify-content: center; margin-top: var(--space-md); }
 
+/* =========================================
+   3. ШАПКА
+   ========================================= */
 .header { display: flex; justify-content: space-between; align-items: center; padding-top: var(--space-md); padding-bottom: var(--space-md); border-bottom: 1px solid var(--border); }
 .logo { font-family: var(--font-display); font-size: 1.25rem; font-weight: 700; }
 .nav { display: flex; gap: var(--space-md); font-size: 0.9rem; color: var(--text-muted); }
 .nav a:hover { color: var(--text); }
 
+/* =========================================
+   4. ГЛАВНЫЙ ЭКРАН (HERO)
+   ========================================= */
 .hero { display: grid; grid-template-columns: 1.2fr 1fr; gap: var(--space-md); padding-top: var(--space-lg); padding-bottom: var(--space-lg); align-items: center; }
 .subtitle { font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--text-muted); margin-bottom: var(--space-sm); }
+.hero-title { font-size: clamp(3rem, 6vw, 5.5rem); margin-bottom: var(--space-md); }
 .hero-desc { max-width: 400px; color: var(--text-muted); margin-bottom: var(--space-md); }
 .hero-actions { display: flex; align-items: center; gap: var(--space-md); }
 .hero-note { font-size: 0.75rem; color: var(--text-muted); }
-.hero-image { height: 600px; border-radius: 4px; overflow: hidden; }
 
-.projects { padding-top: var(--space-lg); padding-bottom: var(--space-lg); border-top: 1px solid var(--border); }
+/* =========================================
+   5. СЕКЦИЯ ПРОЕКТОВ
+   ========================================= */
+section { padding-top: var(--space-lg); padding-bottom: var(--space-lg); border-top: 1px solid var(--border); }
+.projects { border-top: none; }
 .section-header { display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: var(--space-lg); }
+.section-title { font-size: clamp(2rem, 4vw, 3.5rem); }
 .project-count { font-size: 0.75rem; color: var(--text-muted); }
 .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--space-md); }
 .project-card { cursor: pointer; }
@@ -52,19 +80,71 @@ h1, h2, h3 { font-family: var(--font-display); font-weight: 500; line-height: 1.
 .card-info h3 { font-size: 1.5rem; margin-bottom: 0.25rem; }
 .card-info p { font-size: 0.75rem; color: var(--text-muted); }
 
+/* =========================================
+   6. СТАТИСТИКА
+   ========================================= */
+.stats-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: var(--space-md); margin-top: var(--space-lg); }
+.stat-num { font-family: var(--font-display); font-size: 3rem; margin-bottom: 0.5rem; color: var(--accent); }
+.stat-item p { font-size: 0.875rem; color: var(--text-muted); }
+
+/* =========================================
+   7. УСЛУГИ
+   ========================================= */
+.services-list { display: flex; flex-direction: column; margin-top: var(--space-lg); }
+.service-item { display: flex; gap: var(--space-md); padding: var(--space-md) 0; border-bottom: 1px solid var(--border); }
+.service-num { font-family: var(--font-main); color: var(--text-muted); font-size: 0.875rem; padding-top: 0.5rem; }
+.service-content h3 { font-size: 2rem; margin-bottom: 0.5rem; }
+.service-content p { color: var(--text-muted); max-width: 600px; }
+
+/* =========================================
+   8. ПРОЦЕСС
+   ========================================= */
+.process-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: var(--space-md); margin-top: var(--space-lg); }
+.process-step { border-top: 1px solid var(--border); padding-top: var(--space-sm); }
+.step-num { display: block; font-size: 0.75rem; color: var(--text-muted); margin-bottom: var(--space-sm); }
+.process-step h4 { font-family: var(--font-display); font-size: 1.25rem; margin-bottom: 0.5rem; }
+.process-step p { font-size: 0.875rem; color: var(--text-muted); }
+
+/* =========================================
+   9. КОМАНДА И ЦИТАТА
+   ========================================= */
+.quote { text-align: center; }
+.quote-text { font-family: var(--font-display); font-size: clamp(1.5rem, 3vw, 2.5rem); line-height: 1.3; max-width: 900px; margin: 0 auto var(--space-md) auto; }
+.quote-author { font-size: 0.875rem; line-height: 1.4; }
+
+/* =========================================
+   10. ПОДВАЛ
+   ========================================= */
 .footer { padding-top: var(--space-lg); padding-bottom: var(--space-md); border-top: 1px solid var(--border); }
 .footer-top { display: flex; justify-content: space-between; align-items: center; margin-bottom: var(--space-lg); }
 .footer-title { font-size: clamp(2.5rem, 5vw, 4.5rem); }
 .footer-bottom { display: flex; justify-content: space-between; align-items: center; padding-top: var(--space-md); border-top: 1px solid var(--border); font-size: 0.75rem; color: var(--text-muted); }
 
+/* =========================================
+   11. СТИЛИ ДЛЯ ЗАГЛУШЕК (ГДЕ НЕТ КАРТИНОК)
+   ========================================= */
+.hero-image-placeholder { height: 600px; background-color: #2A2A2D; border-radius: 4px; }
+.team-image-placeholder { height: 500px; background-color: #2A2A2D; border-radius: 4px; margin-top: var(--space-lg); }
+.card-img-placeholder { width: 100%; height: 350px; background-color: #2A2A2D; border-radius: 4px; margin-bottom: var(--space-sm); transition: background-color 0.3s; }
+.project-card:hover .card-img-placeholder { background-color: #3A3A3D; }
+
+/* =========================================
+   12. АДАПТИВНОСТЬ
+   ========================================= */
 @media (max-width: 900px) {
   .hero { grid-template-columns: 1fr; }
-  .hero-image { height: 400px; order: -1; }
+  .hero-image-placeholder { height: 400px; order: -1; }
   .grid-3 { grid-template-columns: 1fr 1fr; }
   .nav { display: none; }
+  .stats-grid { grid-template-columns: repeat(2, 1fr); }
+  .process-grid { grid-template-columns: repeat(2, 1fr); }
 }
+
 @media (max-width: 600px) {
   .grid-3 { grid-template-columns: 1fr; }
   .footer-top { flex-direction: column; align-items: flex-start; gap: var(--space-md); }
   .footer-bottom { flex-direction: column; gap: var(--space-sm); align-items: flex-start; }
+  .stats-grid { grid-template-columns: 1fr; }
+  .process-grid { grid-template-columns: 1fr; }
+  .service-item { flex-direction: column; gap: var(--space-sm); }
 }

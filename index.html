@@ -5,12 +5,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Моя студия — Дизайн и разработка</title>
   
-  <!-- Подключение шрифтов Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Unbounded:wght@500;700&display=swap" rel="stylesheet">
   
-  <!-- Подключение стилей -->
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -18,19 +16,17 @@
   <!-- Шапка сайта -->
   <header class="header container">
     <div class="logo">СДВИГ<span class="accent">●</span></div>
-    
     <nav class="nav">
       <a href="#">Проекты</a>
       <a href="#">Подход</a>
       <a href="#">Студия</a>
       <a href="#">Журнал</a>
     </nav>
-    
     <a href="#" class="btn">Обсудим проект ↗</a>
   </header>
 
   <main>
-    <!-- Главный экран (Hero) -->
+    <!-- 1. Главный экран (Hero) -->
     <section class="hero container">
       <div class="hero-content">
         <p class="subtitle">Независимая дизайн-студия</p>
@@ -39,56 +35,124 @@
           Создаём <span class="text-muted">новое.</span>
         </h1>
         <p class="hero-desc">Стратегия, айдентика и цифровой опыт. Помогаем смелым компаниям обрести свой голос — и быть услышанными.</p>
-        
         <div class="hero-actions">
           <a href="#projects" class="btn btn-primary">Смотреть проекты ↗</a>
           <span class="hero-note">На основе случайных значений</span>
         </div>
       </div>
-      
-      <div class="hero-image">
-        <!-- Главное изображение (абстракция) -->
-        <img src="https://images.unsplash.com/photo-1518005020951-eccb494ad742?q=80&w=800&auto=format&fit=crop" alt="Абстрактная архитектура">
-      </div>
+      <!-- Заглушка для главной картинки -->
+      <div class="hero-image-placeholder"></div>
     </section>
 
-    <!-- Секция с проектами -->
+    <!-- 2. Секция проектов -->
     <section id="projects" class="projects container">
       <div class="section-header">
         <h2 class="section-title">Не просто красиво.<br>Точно по смыслу.</h2>
         <span class="project-count">2015 — 2026 / 10 проектов</span>
       </div>
       
-      <!-- Сетка карточек проектов -->
       <div class="grid-3">
-        
-        <!-- Карточка 1 -->
+                <!-- Карточка 1 -->
         <article class="project-card">
-          <img src="img1.svg" alt="Основа">
-          <div class="card-info">
-            <h3>ОСНОВА</h3>
-            <p>Строительство · Айдентика · Сайт</p>
-          </div>
+          <img src="img1.png" alt="Основа">
+          <div class="card-info"><h3>ОСНОВА</h3><p>Строительство · Айдентика · Сайт</p></div>
         </article>
         
         <!-- Карточка 2 -->
         <article class="project-card">
-          <img src="img2.svg" alt="Тихо">
-          <div class="card-info">
-            <h3>ТИХО</h3>
-            <p>Промышленность · Упаковка</p>
-          </div>
+          <img src="img2.png" alt="Тихо">
+          <div class="card-info"><h3>ТИХО</h3><p>Промышленность · Упаковка</p></div>
         </article>
 
         <!-- Карточка 3 -->
         <article class="project-card">
-          <img src="img3.svg" alt="Атлас">
-          <div class="card-info">
-            <h3>АТЛАС</h3>
-            <p>UX/UI · Цифровой продукт</p>
-          </div>
+          <img src="img3.png" alt="Атлас">
+          <div class="card-info"><h3>АТЛАС</h3><p>UX/UI · Цифровой продукт</p></div>
         </article>
 
+        <!-- Карточки 4, 5, 6 (заглушки) -->
+        <article class="project-card">
+          <div class="card-img-placeholder"></div>
+          <div class="card-info"><h3>ПОЛЕ</h3><p>Айдентика · Арт-дирекшн</p></div>
+        </article>
+        <article class="project-card">
+          <div class="card-img-placeholder"></div>
+          <div class="card-info"><h3>ФОРМА</h3><p>E-commerce · Разработка</p></div>
+        </article>
+        <article class="project-card">
+          <div class="card-img-placeholder"></div>
+          <div class="card-info"><h3>СЛОЙ</h3><p>Брендинг · Digital-опыт</p></div>
+        </article>
+      </div>
+      
+      <div class="center-btn">
+        <a href="#" class="btn">Все проекты — 24 ↗</a>
+      </div>
+    </section>
+
+    <!-- 3. Секция "Смысл прежде формы" (Статистика) -->
+    <section class="stats container">
+      <div class="section-header">
+        <h2 class="section-title">Хороший дизайн не добавляет<br>лишнего. Он проявляет главное.</h2>
+      </div>
+      <div class="stats-grid">
+        <div class="stat-item"><h3 class="stat-num">8 лет</h3><p>независимой практики</p></div>
+        <div class="stat-item"><h3 class="stat-num">60+</h3><p>запущенных проектов</p></div>
+        <div class="stat-item"><h3 class="stat-num">12</h3><p>человек в одной команде</p></div>
+        <div class="stat-item"><h3 class="stat-num">18</h3><p>профессиональных наград</p></div>
+      </div>
+    </section>
+
+    <!-- 4. Секция "Что мы делаем" -->
+    <section class="services container">
+      <div class="section-header">
+        <h2 class="section-title">От первого<br>вопроса — до<br>запуска.</h2>
+      </div>
+      <div class="services-list">
+        <div class="service-item">
+          <span class="service-num">01</span>
+          <div class="service-content"><h3>Стратегия</h3><p>Исследуем контекст, находим отличия и формулируем то, ради чего существует ваш бренд.</p></div>
+        </div>
+        <div class="service-item">
+          <span class="service-num">02</span>
+          <div class="service-content"><h3>Айдентика</h3><p>Создаём визуальный язык, который узнают без логотипа. От первого знака до целой системы.</p></div>
+        </div>
+        <div class="service-item">
+          <span class="service-num">03</span>
+          <div class="service-content"><h3>Digital</h3><p>Проектируем сайты и сервисы, в которых смыслы идеи встречаются с удобным опытом.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 5. Секция "Процесс" -->
+    <section class="process container">
+      <div class="section-header">
+        <h2 class="section-title">На одной стороне стола.</h2>
+        <p class="text-muted">Без чёрного ящика. Вы видите логику каждого решения и влияете на результат.</p>
+      </div>
+      <div class="process-grid">
+        <div class="process-step"><span class="step-num">01</span><h4>Погружаемся</h4><p>Слушаем, задаём вопросы, изучаем аудиторию и собираем полный бриф.</p></div>
+        <div class="process-step"><span class="step-num">02</span><h4>Находим идею</h4><p>Формулируем стратегию и предложение, которое отличает вас от конкурентов.</p></div>
+        <div class="process-step"><span class="step-num">03</span><h4>Создаём систему</h4><p>Разрабатываем визуальную систему — от логотипа до интерфейса.</p></div>
+        <div class="process-step"><span class="step-num">04</span><h4>Запускаем</h4><p>Передаём материалы, помогаем внедрить и остаёмся рядом после релиза.</p></div>
+      </div>
+    </section>
+
+    <!-- 6. Секция "Команда" -->
+    <section class="team container">
+      <div class="section-header">
+        <h2 class="section-title">Небольшая команда.<br>Большая вовлечённость.</h2>
+        <p class="text-muted">Мы — дизайнеры, стратеги и разработчики. Собрались в 2018 году.</p>
+      </div>
+      <!-- Заглушка для фото команды -->
+      <div class="team-image-placeholder"></div>
+    </section>
+
+    <!-- 7. Секция "Цитата" -->
+    <section class="quote container">
+      <div class="quote-content">
+        <p class="quote-text">«Команда Сдвига увидела в нашем бизнесе то, что мы сами не могли сформулировать. Получился не просто новый стиль — появилось понимание, кто мы и куда идём».</p>
+        <p class="quote-author">Алексей Воронов<br><span class="text-muted">Основатель / ресторанная компания «Основа»</span></p>
       </div>
     </section>
   </main>
@@ -99,7 +163,6 @@
       <h2 class="footer-title">Всё начинается с<br>разговора.</h2>
       <a href="#" class="btn-circle accent">↗</a>
     </div>
-    
     <div class="footer-bottom">
       <div class="logo">СДВИГ<span class="accent">●</span></div>
       <p>© 2015—2026. Независимая дизайн-студия.</p>
