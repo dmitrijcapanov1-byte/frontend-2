@@ -2,7 +2,7 @@
    1. ПЕРЕМЕННЫЕ И БАЗОВЫЕ НАСТРОЙКИ
    ========================================= */
 :root {
-  /* Цвета (наша кастомная версия) */
+  /* Цвета */
   --bg: #161618;          /* Графитовый фон */
   --text: #EDEDED;        /* Мягкий белый */
   --text-muted: #8A8A93;  /* Серый для второстепенного текста */
@@ -16,7 +16,7 @@
   /* Отступы */
   --space-sm: 1rem;
   --space-md: 2rem;
-  --space-lg: 8rem;       /* Большой "воздух" между секциями */
+  --space-lg: 8rem;
 }
 
 * { 
@@ -145,7 +145,7 @@ h1, h2, h3, h4 {
 }
 
 /* =========================================
-   4. ГЛАВНЫЙ ЭКРАН (HERO)
+   4. ГЛАВНЫЙ ЭКРАН (HERO) И 3D-ФОН
    ========================================= */
 .hero { 
   display: grid; 
@@ -154,6 +154,22 @@ h1, h2, h3, h4 {
   padding-top: var(--space-lg); 
   padding-bottom: var(--space-lg); 
   align-items: center; 
+  
+  /* Важно для позиционирования 3D-канваса */
+  position: relative; 
+  overflow: hidden;
+}
+
+/* Контейнер для 3D-частиц Three.js */
+#canvas-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1; /* Уводим за контент */
+  pointer-events: none; /* Чтобы мышь не блокировалась */
+  opacity: 0.6; /* Делаем частицы полупрозрачными */
 }
 
 .subtitle { 
@@ -162,23 +178,31 @@ h1, h2, h3, h4 {
   letter-spacing: 0.1em; 
   color: var(--text-muted); 
   margin-bottom: var(--space-sm); 
+  position: relative;
+  z-index: 1;
 }
 
 .hero-title { 
   font-size: clamp(3rem, 6vw, 5.5rem); 
   margin-bottom: var(--space-md); 
+  position: relative;
+  z-index: 1;
 }
 
 .hero-desc { 
   max-width: 400px; 
   color: var(--text-muted); 
   margin-bottom: var(--space-md); 
+  position: relative;
+  z-index: 1;
 }
 
 .hero-actions { 
   display: flex; 
   align-items: center; 
   gap: var(--space-md); 
+  position: relative;
+  z-index: 1;
 }
 
 .hero-note { 
@@ -190,6 +214,8 @@ h1, h2, h3, h4 {
   height: 600px; 
   background-color: #2A2A2D; 
   border-radius: 4px; 
+  position: relative;
+  z-index: 1; /* Поверх 3D-фона */
 }
 
 /* =========================================
@@ -202,7 +228,7 @@ section {
 }
 
 .projects { 
-  border-top: none; /* Убираем лишнюю линию над проектами */
+  border-top: none; 
 }
 
 .section-header { 
@@ -236,7 +262,7 @@ section {
 /* Обертка для картинки и оверлея */
 .card-inner {
   position: relative;
-  overflow: hidden; /* Скрываем всё, что вылезает за края */
+  overflow: hidden;
   border-radius: 4px;
   height: 350px;
   margin-bottom: var(--space-sm);
@@ -246,10 +272,9 @@ section {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  transition: transform 0.6s cubic-bezier(0.25, 1, 0.5, 1); /* Плавный зум */
+  transition: transform 0.6s cubic-bezier(0.25, 1, 0.5, 1);
 }
 
-/* Эффект увеличения картинки при наведении на карточку */
 .project-card:hover .card-inner img {
   transform: scale(1.05); 
 }
@@ -267,15 +292,15 @@ section {
   opacity: 0;
   transition: opacity 0.4s ease;
   
-  /* Добавляем две строки для размытия (для всех браузеров) */
-  -webkit-backdrop-filter: blur(4px); /* Для Safari */
-  backdrop-filter: blur(4px);         /* Для Chrome, Edge, Firefox */
+  /* Кроссбраузерное размытие фона */
+  -webkit-backdrop-filter: blur(4px); 
+  backdrop-filter: blur(4px);
   
   padding: var(--space-md);
 }
 
 .project-card:hover .card-overlay {
-  opacity: 1; /* Показываем при наведении */
+  opacity: 1;
 }
 
 .card-category {
@@ -495,4 +520,33 @@ section {
   .stats-grid { grid-template-columns: 1fr; }
   .process-grid { grid-template-columns: 1fr; }
   .service-item { flex-direction: column; gap: var(--space-sm); }
+}
+
+/* =========================================
+   12. ДОСТУПНОСТЬ И PREFERS-REDUCED-MOTION
+   ========================================= */
+
+/* Если пользователь отключил анимации в системе */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+  
+  /* Отключаем 3D-частицы (скрываем контейнер) */
+  #canvas-container {
+    display: none;
+  }
+}
+
+/* Видимый фокус для клавиатуры (доступность) */
+a:focus-visible,
+button:focus-visible,
+.btn:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 4px;
 }

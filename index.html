@@ -20,8 +20,8 @@
   <!-- Шапка сайта -->
   <header class="header container">
     <div class="logo">СДВИГ<span class="accent">●</span></div>
-    <nav class="nav">
-      <a href="#">Проекты</a>
+    <nav class="nav" aria-label="Основная навигация">
+      <a href="#projects">Проекты</a>
       <a href="#">Подход</a>
       <a href="#">Студия</a>
       <a href="#">Журнал</a>
@@ -32,9 +32,11 @@
   <main>
     <!-- 1. Главный экран (Hero) -->
     <section class="hero container">
+      <!-- Контейнер для 3D-частиц -->
+      <div id="canvas-container" aria-hidden="true"></div>
+
       <div class="hero-content">
         <p class="subtitle">Независимая дизайн-студия</p>
-        <!-- Класс gsap-title для анимации по буквам -->
         <h1 class="hero-title gsap-title">
           Сдвигаем привычное.<br>
           Создаём <span class="text-muted">новое.</span>
@@ -55,13 +57,11 @@
         <span class="project-count">2015 — 2026 / 10 проектов</span>
       </div>
       
-      <!-- Открываем сетку grid-3 -->
       <div class="grid-3">
-        
         <!-- Карточка 1 -->
         <article class="project-card" data-aos="fade-up" data-aos-delay="0">
           <div class="card-inner">
-            <img src="img1.png" alt="Основа">
+            <img src="img1.png" alt="Проект Основа — строительство, айдентика и сайт">
             <div class="card-overlay">
               <span class="card-category">Строительство</span>
               <h3>ОСНОВА</h3>
@@ -77,7 +77,7 @@
         <!-- Карточка 2 -->
         <article class="project-card" data-aos="fade-up" data-aos-delay="100">
           <div class="card-inner">
-            <img src="img2.png" alt="Тихо">
+            <img src="img2.png" alt="Проект Тихо — промышленность и упаковка">
             <div class="card-overlay">
               <span class="card-category">Промышленность</span>
               <h3>ТИХО</h3>
@@ -93,7 +93,7 @@
         <!-- Карточка 3 -->
         <article class="project-card" data-aos="fade-up" data-aos-delay="200">
           <div class="card-inner">
-            <img src="img3.png" alt="Атлас">
+            <img src="img3.png" alt="Проект Атлас — UX/UI и цифровой продукт">
             <div class="card-overlay">
               <span class="card-category">UX/UI</span>
               <h3>АТЛАС</h3>
@@ -106,30 +106,29 @@
           </div>
         </article>
 
-        <!-- Карточки 4, 5, 6 (заглушки) -->
+        <!-- Карточки 4, 5, 6 (заглушки с доступностью) -->
         <article class="project-card" data-aos="fade-up" data-aos-delay="0">
-          <div class="card-img-placeholder"></div>
+          <div class="card-img-placeholder" role="img" aria-label="Заглушка проекта ПОЛЕ"></div>
           <div class="card-info"><h3>ПОЛЕ</h3><p>Айдентика · Арт-дирекшн</p></div>
         </article>
         
         <article class="project-card" data-aos="fade-up" data-aos-delay="100">
-          <div class="card-img-placeholder"></div>
+          <div class="card-img-placeholder" role="img" aria-label="Заглушка проекта ФОРМА"></div>
           <div class="card-info"><h3>ФОРМА</h3><p>E-commerce · Разработка</p></div>
         </article>
         
         <article class="project-card" data-aos="fade-up" data-aos-delay="200">
-          <div class="card-img-placeholder"></div>
+          <div class="card-img-placeholder" role="img" aria-label="Заглушка проекта СЛОЙ"></div>
           <div class="card-info"><h3>СЛОЙ</h3><p>Брендинг · Digital-опыт</p></div>
         </article>
-
-      </div> <!-- Закрываем сетку grid-3 -->
+      </div>
       
       <div class="center-btn" data-aos="fade-up">
         <a href="#" class="btn">Все проекты — 24 ↗</a>
       </div>
     </section>
 
-    <!-- 3. Секция "Смысл прежде формы" (Статистика) -->
+    <!-- 3. Секция Статистики -->
     <section class="stats container">
       <div class="section-header" data-aos="fade-right">
         <h2 class="section-title">Хороший дизайн не добавляет<br>лишнего. Он проявляет главное.</h2>
@@ -142,7 +141,7 @@
       </div>
     </section>
 
-    <!-- 4. Секция "Что мы делаем" -->
+    <!-- 4. Секция Услуг -->
     <section class="services container">
       <div class="section-header" data-aos="fade-up">
         <h2 class="section-title">От первого<br>вопроса — до<br>запуска.</h2>
@@ -163,7 +162,7 @@
       </div>
     </section>
 
-    <!-- 5. Секция "Процесс" -->
+    <!-- 5. Секция Процесса -->
     <section class="process container">
       <div class="section-header" data-aos="fade-up">
         <h2 class="section-title">На одной стороне стола.</h2>
@@ -177,7 +176,7 @@
       </div>
     </section>
 
-    <!-- 6. Секция "Команда" -->
+    <!-- 6. Секция Команды -->
     <section class="team container">
       <div class="section-header" data-aos="fade-up">
         <h2 class="section-title">Небольшая команда.<br>Большая вовлечённость.</h2>
@@ -186,7 +185,7 @@
       <div class="team-image-placeholder" data-aos="zoom-in"></div>
     </section>
 
-    <!-- 7. Секция "Цитата" -->
+    <!-- 7. Секция Цитаты -->
     <section class="quote container">
       <div class="quote-content" data-aos="fade-up">
         <p class="quote-text">«Команда Сдвига увидела в нашем бизнесе то, что мы сами не могли сформулировать. Получился не просто новый стиль — появилось понимание, кто мы и куда идём».</p>
@@ -218,6 +217,9 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/SplitText.min.js"></script>
+
+  <!-- Three.js для 3D-частиц -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
 
   <!-- Твой файл со скриптами -->
   <script src="script.js"></script>
