@@ -1,28 +1,56 @@
-// Ждем загрузки DOM
+/**
+ * script.js
+ * Основной файл скриптов для проекта "СДВИГ"
+ * Включает в себя: AOS (анимации при скролле) и GSAP (анимация текста)
+ */
+
 document.addEventListener("DOMContentLoaded", () => {
   
-  // 1. Инициализация AOS
-  AOS.init({
-    duration: 800,
-    once: true,
-    offset: 100
-  });
+  // ==========================================
+  // 1. ИНИЦИАЛИЗАЦИЯ AOS (Animate On Scroll)
+  // ==========================================
+  // Проверяем, загрузилась ли библиотека AOS
+  if (typeof AOS !== 'undefined') {
+    AOS.init({
+      duration: 800, // Длительность анимации (в миллисекундах)
+      once: true,    // Анимация срабатывает только один раз при прокрутке
+      offset: 100    // Смещение (в пикселях) для более раннего срабатывания
+    });
+  } else {
+    console.warn("Библиотека AOS не загружена. Анимации при скролле не будут работать.");
+  }
 
-  // 2. Инициализация GSAP
+  // ==========================================
+  // 2. ИНИЦИАЛИЗАЦИЯ GSAP + SPLITTEXT (Текст по буквам)
+  // ==========================================
+  // Проверяем, загрузились ли GSAP и SplitText
   if (typeof gsap !== 'undefined' && typeof SplitText !== 'undefined') {
+    
+    // Регистрируем плагин SplitText
     gsap.registerPlugin(SplitText);
 
-    const split = new SplitText(".gsap-title", { type: "chars, words, lines" });
+    // Находим наш заголовок на странице
+    const titleElement = document.querySelector(".gsap-title");
+    
+    if (titleElement) {
+      // Разбиваем текст на символы (буквы), слова и строки
+      const split = new SplitText(titleElement, { type: "chars, words, lines" });
 
-    gsap.from(split.chars, {
-      duration: 0.8,
-      y: 50,
-      opacity: 0,
-      rotationX: -90,
-      transformOrigin: "0% 50% -50",
-      stagger: 0.03,
-      ease: "back.out(1.7)",
-      delay: 0.3
-    });
+      // Запускаем анимацию появления каждой буквы
+      gsap.from(split.chars, {
+        duration: 0.8,             // Длительность анимации одной буквы
+        y: 50,                     // Смещение по оси Y (снизу вверх)
+        opacity: 0,                // Начальная прозрачность
+        rotationX: -90,            // Небольшой 3D-поворот для эффекта
+        transformOrigin: "0% 50% -50", // Точка вращения
+        stagger: 0.03,             // Задержка между появлением каждой следующей буквы (каскад)
+        ease: "back.out(1.7)",     // Плавное появление с легким отскоком
+        delay: 0.3                 // Пауза перед началом анимации
+      });
+    }
+    
+  } else {
+    console.warn("GSAP или SplitText не загружены. Анимация текста не будет работать.");
   }
+
 });

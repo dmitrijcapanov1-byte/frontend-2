@@ -34,7 +34,7 @@
     <section class="hero container">
       <div class="hero-content">
         <p class="subtitle">Независимая дизайн-студия</p>
-        <!-- Добавили класс gsap-title для анимации по буквам -->
+        <!-- Класс gsap-title для анимации по буквам -->
         <h1 class="hero-title gsap-title">
           Сдвигаем привычное.<br>
           Создаём <span class="text-muted">новое.</span>
@@ -55,23 +55,55 @@
         <span class="project-count">2015 — 2026 / 10 проектов</span>
       </div>
       
+      <!-- Открываем сетку grid-3 -->
       <div class="grid-3">
+        
         <!-- Карточка 1 -->
         <article class="project-card" data-aos="fade-up" data-aos-delay="0">
-          <img src="img1.png" alt="Основа">
-          <div class="card-info"><h3>ОСНОВА</h3><p>Строительство · Айдентика · Сайт</p></div>
+          <div class="card-inner">
+            <img src="img1.png" alt="Основа">
+            <div class="card-overlay">
+              <span class="card-category">Строительство</span>
+              <h3>ОСНОВА</h3>
+              <span class="card-link">Смотреть ↗</span>
+            </div>
+          </div>
+          <div class="card-info">
+            <h3>ОСНОВА</h3>
+            <p>Строительство · Айдентика · Сайт</p>
+          </div>
         </article>
         
         <!-- Карточка 2 -->
         <article class="project-card" data-aos="fade-up" data-aos-delay="100">
-          <img src="img2.png" alt="Тихо">
-          <div class="card-info"><h3>ТИХО</h3><p>Промышленность · Упаковка</p></div>
+          <div class="card-inner">
+            <img src="img2.png" alt="Тихо">
+            <div class="card-overlay">
+              <span class="card-category">Промышленность</span>
+              <h3>ТИХО</h3>
+              <span class="card-link">Смотреть ↗</span>
+            </div>
+          </div>
+          <div class="card-info">
+            <h3>ТИХО</h3>
+            <p>Промышленность · Упаковка</p>
+          </div>
         </article>
 
         <!-- Карточка 3 -->
         <article class="project-card" data-aos="fade-up" data-aos-delay="200">
-          <img src="img3.png" alt="Атлас">
-          <div class="card-info"><h3>АТЛАС</h3><p>UX/UI · Цифровой продукт</p></div>
+          <div class="card-inner">
+            <img src="img3.png" alt="Атлас">
+            <div class="card-overlay">
+              <span class="card-category">UX/UI</span>
+              <h3>АТЛАС</h3>
+              <span class="card-link">Смотреть ↗</span>
+            </div>
+          </div>
+          <div class="card-info">
+            <h3>АТЛАС</h3>
+            <p>UX/UI · Цифровой продукт</p>
+          </div>
         </article>
 
         <!-- Карточки 4, 5, 6 (заглушки) -->
@@ -79,15 +111,18 @@
           <div class="card-img-placeholder"></div>
           <div class="card-info"><h3>ПОЛЕ</h3><p>Айдентика · Арт-дирекшн</p></div>
         </article>
+        
         <article class="project-card" data-aos="fade-up" data-aos-delay="100">
           <div class="card-img-placeholder"></div>
           <div class="card-info"><h3>ФОРМА</h3><p>E-commerce · Разработка</p></div>
         </article>
+        
         <article class="project-card" data-aos="fade-up" data-aos-delay="200">
           <div class="card-img-placeholder"></div>
           <div class="card-info"><h3>СЛОЙ</h3><p>Брендинг · Digital-опыт</p></div>
         </article>
-      </div>
+
+      </div> <!-- Закрываем сетку grid-3 -->
       
       <div class="center-btn" data-aos="fade-up">
         <a href="#" class="btn">Все проекты — 24 ↗</a>
@@ -160,7 +195,7 @@
     </section>
   </main>
 
-    <!-- Подвал сайта -->
+  <!-- Подвал сайта -->
   <footer class="footer container">
     <div class="footer-top" data-aos="fade-up">
       <h2 class="footer-title">Всё начинается с<br>разговора.</h2>
@@ -184,7 +219,7 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/SplitText.min.js"></script>
 
-  <!-- Твой файл со скриптами (без кода внутри) -->
+  <!-- Твой файл со скриптами -->
   <script src="script.js"></script>
 
 </body>
